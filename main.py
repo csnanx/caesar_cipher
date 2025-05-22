@@ -7,9 +7,6 @@ print(r"""
 ██      ██   ██ ██           ██ ██   ██ ██   ██     ██      ██ ██      ██   ██ ██      ██   ██ 
  ██████ ██   ██ ███████ ███████ ██   ██ ██   ██      ██████ ██ ██      ██   ██ ███████ ██   ██ 
 """)
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
 
 def caesar(original_text, shift_amount, encode_or_decode):
     output_text = ""
@@ -23,6 +20,13 @@ def caesar(original_text, shift_amount, encode_or_decode):
             output_text += alphabet[shifted_position]
         else:
             output_text += letter
-    print(f"Here is the {direction}d result: {output_text}")
+    print(f"Here is the {encode_or_decode}d result: {output_text}")
 
-caesar(text, shift, direction)
+while True:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    caesar(text, shift, direction)
+    go_again = input("Do you want to use caesar cipher again? (y/n): ")
+    if go_again == "n":
+        break
