@@ -19,10 +19,11 @@ def caesar(original_text, shift_amount, encode_or_decode):
     print(f"Here is the {encode_or_decode}d result: {output_text}")
 
 while True:
-    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    direction = input("\nType 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
     caesar(text, shift, direction)
     go_again = input("Do you want to use caesar cipher again? (y/n): ")
     if go_again == "n":
+        print("Goodbye...I guess")
         break
