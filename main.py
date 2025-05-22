@@ -8,6 +8,7 @@ def encrypt(original_text, shift_number):
     encrypted_text = ""
     for char in original_text:
         shifted_char_index = alphabet.index(char) + shift_number
+        shifted_char_index = shifted_char_index % len(alphabet)
         shifted_char = alphabet[shifted_char_index]
         encrypted_text += shifted_char
 
@@ -15,5 +16,6 @@ def decrypt(original_text, shift_number):
     decrypted_text = ""
     for char in original_text:
         shifted_char_index = alphabet.index(char) - shift_number
+        shifted_char_index = shifted_char_index % len(alphabet)
         shifted_char = alphabet[shifted_char_index]
         decrypted_text += shifted_char
