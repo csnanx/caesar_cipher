@@ -35,13 +35,14 @@ def brute_force_decode(original_text):
 
 while True:
     direction = input("\nWhat would you like to do?\n1. Encode a message\n2. Decode a message\n3. Brute force a message\n4. Exit\nEnter your choice: ").lower()
+
+    if direction == "4":
+        print("Goodbye...I guess")
+        break
+
     text = input("Type your message:\n").lower()
     if direction == "3":
         brute_force_decode(text)
     else:
         shift = int(input("Type the shift number:\n"))
         caesar(text, shift, direction)
-    go_again = input("\nDo you want to use caesar cipher again? (y/n): ")
-    if go_again == "n":
-        print("Goodbye...I guess")
-        break
